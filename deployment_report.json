@@ -51,5 +51,10 @@
     "google_sitemap_ping_attempt": "HTTP 404 deprecated",
     "bing_sitemap_ping_attempt": "HTTP 410 deprecated",
     "next_step": "Add the domain property in Google Search Console and verify via DNS TXT, or provide/authorize Google Search Console OAuth/API access. Then submit https://cup2026predictor.com/sitemap.xml."
+  },
+  "indexnow": {
+    "key": "48b33a9e669b77036cc7b79121580732",
+    "key_location": "https://cup2026predictor.com/48b33a9e669b77036cc7b79121580732.txt",
+    "status": "key_file_created_pending_deploy"
   }
 }
