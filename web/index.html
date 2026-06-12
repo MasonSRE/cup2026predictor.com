@@ -578,7 +578,10 @@
   function show(tabId) {
     document.querySelectorAll(".tab").forEach(s => s.classList.toggle("active", s.id === "tab-" + tabId));
     navEl.querySelectorAll(".nav-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tabId));
-    if (location.hash !== "#" + tabId) history.replaceState(null, "", "#" + tabId);
+    const cleanUrl = location.pathname + location.search;
+    const targetUrl = tabId === "overview" ? cleanUrl : cleanUrl + "#" + tabId;
+    if (location.pathname + location.search + location.hash !== targetUrl)
+      history.replaceState(null, "", targetUrl);
     fillBars();
   }
   navEl.addEventListener("click", e => { if (e.target.dataset.tab) show(e.target.dataset.tab); });
