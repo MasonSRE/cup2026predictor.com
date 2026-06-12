@@ -185,7 +185,7 @@ def update_sitemap_robots():
         xml.append(f"  <url><loc>{DOMAIN}{u}</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>{'1.0' if u=='/' else '0.8'}</priority></url>")
     xml.append('</urlset>')
     (WEB/'sitemap.xml').write_text('\n'.join(xml)+'\n', encoding='utf-8')
-    (WEB/'robots.txt').write_text(f"User-agent: *\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: Applebot\nAllow: /\n\nUser-agent: DuckDuckBot\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n", encoding='utf-8')
+    (WEB/'robots.txt').write_text(f"User-agent: *\nAllow: /\n\n# Major search engines\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: GoogleOther\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: BingPreview\nAllow: /\n\nUser-agent: Slurp\nAllow: /\n\nUser-agent: Applebot\nAllow: /\n\nUser-agent: DuckDuckBot\nAllow: /\n\nUser-agent: YandexBot\nAllow: /\n\n# AI / answer-engine crawlers\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Bytespider\nAllow: /\n\nUser-agent: Amazonbot\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n", encoding='utf-8')
     (WEB/'llms.txt').write_text(f"""# Cup 2026 Predictor
 
 Cup 2026 Predictor is an English World Cup 2026 prediction and simulator site.
@@ -212,6 +212,10 @@ Robots: {DOMAIN}/robots.txt
 ## Data and model notes
 
 The site uses a local Python prediction engine based on dynamic Elo ratings, score distributions, host boosts, optional market signals, and Monte Carlo tournament simulations. Predictions are for information and entertainment only and are not betting advice.
+
+## Crawler policy
+
+The site intends to be discoverable by major search engines and answer engines. The public robots.txt allows Googlebot, Bingbot, Yahoo Slurp, Applebot, DuckDuckBot, GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, CCBot, and related discovery crawlers.
 
 ## Source attribution
 

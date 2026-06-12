@@ -25,6 +25,10 @@ Robots: https://cup2026predictor.com/robots.txt
 
 The site uses a local Python prediction engine based on dynamic Elo ratings, score distributions, host boosts, optional market signals, and Monte Carlo tournament simulations. Predictions are for information and entertainment only and are not betting advice.
 
+## Crawler policy
+
+The site intends to be discoverable by major search engines and answer engines. The public robots.txt allows Googlebot, Bingbot, Yahoo Slurp, Applebot, DuckDuckBot, GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, CCBot, and related discovery crawlers.
+
 ## Source attribution
 
 This project is a second-development fork of the open-source ai-worldcup-2026 project, with custom English SEO pages, branding, analytics, and deployment workflow for cup2026predictor.com.
