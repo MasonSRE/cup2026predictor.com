@@ -255,6 +255,9 @@
   .hit.yes { color: var(--lime); border: 1px solid rgba(184,245,61,.4); }
   .hit.no { color: var(--faint); border: 1px solid var(--line); }
   .hit.gold { color: var(--gold); border: 1px solid rgba(255,215,94,.4); }
+  .draw-warn { font-size: 10px; font-family: var(--mono); color: var(--gold);
+    border: 1px solid rgba(255, 215, 94, .4); padding: 0 5px; border-radius: 2px;
+    margin-left: 7px; letter-spacing: .08em; }
 
   /* ---- 小组 ---- */
   .groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 14px; }
@@ -758,7 +761,7 @@
         predHTML = `<div class="m-pred">
           <div class="pred-line"><span>主胜 ${pct(m.pred.p_home, 0)}</span><span>平 ${pct(m.pred.p_draw, 0)}</span><span>客胜 ${pct(m.pred.p_away, 0)}</span></div>
           <div class="obar"><i class="h" style="width:${m.pred.p_home * 100}%"></i><i class="d" style="width:${m.pred.p_draw * 100}%"></i><i class="a" style="width:${m.pred.p_away * 100}%"></i></div>
-          <div class="pred-line"><span>看好 ${pickLabel(m, p)} ${p.pred_score.join("-")}</span><span>#${m.match}</span></div>${adv}</div>`;
+          <div class="pred-line"><span>看好 ${pickLabel(m, m.pred)} ${m.pred.pred_score.join("-")}${m.pred.p_draw >= 0.28 ? '<span class="draw-warn">防平</span>' : ""}</span><span>#${m.match}</span></div>${adv}</div>`;
       } else {
         predHTML = `<div class="m-pred">对阵确定后给出预测 · #${m.match}</div>`;
       }
