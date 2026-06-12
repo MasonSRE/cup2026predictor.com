@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#07100b">
-<title>AI 世界杯预测 2026 ｜ 实时夺冠概率 · 比分预测 · 每日 AI 战报</title>
-<meta name="description" content="AI 把 2026 美加墨世界杯提前模拟数亿次：48 强实时夺冠概率、104 场逐场比分预测与博彩盘口对照、小组出线形势、每日 AI 战报与预测战绩追踪，每场比赛结束后自动更新。">
-<meta name="keywords" content="世界杯2026,世界杯预测,AI预测,夺冠概率,比分预测,世界杯赛程,美加墨世界杯,世界杯盘口">
-<link rel="canonical" href="https://worldcup.lightai.io/">
+<title>AI World Cup Predictions 2026 | Live Champion Odds, Scores & Daily Reports</title>
+<meta name="description" content="AI-powered 2026 World Cup predictions with live champion probabilities, match score forecasts, group qualification outlooks, daily reports, and prediction record tracking.">
+<meta name="keywords" content="World Cup 2026 predictions, World Cup predictor 2026, AI World Cup predictions, champion odds, score predictions, World Cup schedule, 2026 tournament simulator">
+<link rel="canonical" href="https://cup2026predictor.com/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="AI 世界杯预测 2026">
-<meta property="og:title" content="AI 世界杯预测 2026 ｜ 实时夺冠概率 · 比分预测">
-<meta property="og:description" content="AI 模拟数亿次的世界杯预测：实时夺冠概率、逐场比分预测、每日 AI 战报，赛后自动更新。">
-<meta property="og:url" content="https://worldcup.lightai.io/">
-<meta property="og:image" content="https://worldcup.lightai.io/og-image.png">
+<meta property="og:site_name" content="AI World Cup Predictions 2026">
+<meta property="og:title" content="AI World Cup Predictions 2026 | Live Champion Odds & Score Forecasts">
+<meta property="og:description" content="AI-powered 2026 World Cup predictions: live champion probabilities, match score forecasts, daily reports, and post-match updates.">
+<meta property="og:url" content="https://cup2026predictor.com/">
+<meta property="og:image" content="https://cup2026predictor.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI 世界杯预测 2026 ｜ 实时夺冠概率 · 比分预测">
-<meta name="twitter:description" content="AI 模拟数亿次的世界杯预测：实时夺冠概率、逐场比分预测、每日 AI 战报。">
-<meta name="twitter:image" content="https://worldcup.lightai.io/og-image.png">
+<meta name="twitter:title" content="AI World Cup Predictions 2026 | Live Champion Odds & Score Forecasts">
+<meta name="twitter:description" content="AI-powered 2026 World Cup predictions, match forecasts, daily reports, and prediction record tracking.">
+<meta name="twitter:image" content="https://cup2026predictor.com/og-image.png">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"WebSite","name":"AI 世界杯预测 2026","alternateName":"worldcup.lightai.io",
-  "url":"https://worldcup.lightai.io/","inLanguage":"zh-CN",
-  "description":"AI 模拟数亿次的 2026 世界杯预测：实时夺冠概率、逐场比分预测、每日 AI 战报，赛后自动更新。"},
- {"@type":"SportsEvent","name":"2026 FIFA 世界杯","alternateName":"FIFA World Cup 2026",
+ {"@type":"WebSite","name":"AI World Cup Predictions 2026","alternateName":"cup2026predictor.com",
+  "url":"https://cup2026predictor.com/","inLanguage":"en-US",
+  "description":"AI-powered 2026 World Cup predictions with live champion probabilities, match score forecasts, daily reports, and post-match updates."},
+ {"@type":"SportsEvent","name":"2026 FIFA World Cup","alternateName":"FIFA World Cup 2026",
   "startDate":"2026-06-11","endDate":"2026-07-19","eventStatus":"https://schema.org/EventScheduled",
-  "location":[{"@type":"Country","name":"美国"},{"@type":"Country","name":"加拿大"},{"@type":"Country","name":"墨西哥"}],
+  "location":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"},{"@type":"Country","name":"Mexico"}],
   "organizer":{"@type":"Organization","name":"FIFA","url":"https://www.fifa.com"}}
 ]}
 </script>
@@ -79,6 +79,7 @@
     color: transparent; -webkit-text-stroke: 1px rgba(184,245,61,.14);
     letter-spacing: .02em; line-height: 1; user-select: none;
   }
+  .kicker-row { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .kicker {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: var(--mono); font-size: 12px; letter-spacing: .28em;
@@ -87,6 +88,12 @@
   }
   .kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%;
     background: var(--lime); box-shadow: 0 0 12px var(--lime); animation: blink 2.4s infinite; }
+  .lang-toggle {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink); background: rgba(12,24,17,.66); border: 1px solid var(--line-strong);
+    padding: 7px 12px; border-radius: 2px; cursor: pointer;
+  }
+  .lang-toggle:hover { color: var(--lime); border-color: var(--lime); background: rgba(184,245,61,.08); }
   h1 { font-family: var(--disp); font-weight: 400; font-size: clamp(40px, 6vw, 76px);
        line-height: 1.05; letter-spacing: .015em; margin: 22px 0 10px; }
   h1 .accent { color: var(--lime); }
@@ -461,9 +468,9 @@
 <div class="wrap">
   <header>
     <div class="year-bg">2026</div>
-    <span class="kicker">Daily Update · Live</span>
-    <h1>AI 世界杯预测 <span class="accent">2026</span></h1>
-    <p class="sub">谁能捧起大力神杯？我们让 AI 把这届世界杯提前"踢"了上亿遍。每天根据最新战况重新计算，整个赛事期间持续更新。</p>
+    <div class="kicker-row"><span class="kicker">Daily Update · Live</span><button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">中文</button></div>
+    <h1>AI World Cup Predictions <span class="accent">2026</span></h1>
+    <p class="sub">Who will lift the trophy? This site lets the model play the 2026 World Cup millions of times, then recalculates the title race, match forecasts, groups, and prediction record after every update.</p>
     <div class="meta-chips" id="meta-chips"></div>
   </header>
 
@@ -515,10 +522,6 @@
 
   <footer>
     <div id="gen-time"></div>
-    <a class="gh-link" href="https://github.com/vastxie/ai-worldcup-2026" target="_blank" rel="noopener">
-      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-      开源代码 · GitHub
-    </a>
   </footer>
 </div>
 <button class="share-btn" id="share-btn" title="保存长图，方便分享" aria-label="保存长图分享">
@@ -1050,5 +1053,6 @@
   showFromHash();
 })();
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>
