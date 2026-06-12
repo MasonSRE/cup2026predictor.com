@@ -1032,7 +1032,7 @@
       btn.classList.add("busy");
       try {
         if (!window.html2canvas)
-          await loadScript("html2canvas.min.js");
+          await loadScript("/html2canvas.min.js");
         const sec = document.querySelector("section.tab.active");
         const tabId = sec.id.replace("tab-", "");
         const tabName = (TABS.find(([id]) => id === tabId) || ["", ""])[1];
@@ -1083,7 +1083,7 @@
           <div class="io-bar"><span>📌 Preview generated · save or share the image</span>
             <div class="io-actions">
               <a class="io-download" download="${fileName}" href="${dataUrl}">Download PNG</a>
-              <button class="io-native-share" type="button">Share</button>
+              <button class="io-native-share" type="button">Copy URL</button>
               <button class="io-close" aria-label="Close">✕</button>
             </div>
           </div>
@@ -1091,18 +1091,26 @@
         ov.querySelector(".io-close").onclick = () => ov.remove();
         const shareBtn = ov.querySelector(".io-native-share");
         shareBtn.onclick = async () => {
+          const url = location.href.split("#")[0];
           try {
-            const blob = await new Promise(resolve => outCanvas.toBlob(resolve, "image/png"));
-            const file = blob ? new File([blob], fileName, { type: "image/png" }) : null;
-            if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
-              await navigator.share({ files: [file], title: document.title, text: "AI World Cup Predictions 2026" });
-            } else if (navigator.share) {
-              await navigator.share({ title: document.title, text: "AI World Cup Predictions 2026", url: location.href });
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(url);
             } else {
-              ov.querySelector(".io-download").click();
+              const ta = document.createElement("textarea");
+              ta.value = url;
+              ta.style.position = "fixed";
+              ta.style.left = "-9999px";
+              document.body.appendChild(ta);
+              ta.focus();
+              ta.select();
+              document.execCommand("copy");
+              ta.remove();
             }
+            const old = shareBtn.textContent;
+            shareBtn.textContent = "Copied!";
+            setTimeout(() => { shareBtn.textContent = old; }, 1400);
           } catch (err) {
-            if (err && err.name !== "AbortError") ov.querySelector(".io-download").click();
+            prompt("Copy this URL", url);
           }
         };
         document.body.appendChild(ov);
