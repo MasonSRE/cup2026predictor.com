@@ -72,7 +72,7 @@ def build_state() -> dict:
         lk = locked.get(str(m["match"]))
         we_o = lk["we"] if lk else None
         pred = match_probabilities(home, away, knockout=ko, we_override=we_o)
-        top_score = pred["top_scores"][0][0]
+        top_score = pred["outcome_score"][0]  # 与胜负判断一致的首选比分
 
         actual = outcome_of(m["score"])
         probs = {"H": pred["p_win"], "D": pred["p_draw"], "A": pred["p_loss"]}
@@ -91,6 +91,7 @@ def build_state() -> dict:
             "p_home": round(pred["p_win"], 4),
             "p_draw": round(pred["p_draw"], 4),
             "p_away": round(pred["p_loss"], 4),
+            "pick": pred["outcome_pick"],
             "pred_score": list(top_score),
             "top_scores": [{"score": list(s), "p": round(p, 4)}
                            for s, p in pred["top_scores"][:5]],

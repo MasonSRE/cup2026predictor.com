@@ -10,8 +10,11 @@
   "away": "RSA",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   0
+  ],
+  "winner": "MEX"
  },
  {
   "match": 2,

@@ -721,6 +721,12 @@
   const todayStr = new Date().toLocaleDateString("zh-CN");
   const byMatch = {}; D.schedule.forEach(m => byMatch[m.match] = m);
 
+  function pickLabel(m, p) {
+    if (!p || !p.pick) return "";
+    if (p.pick === "D") return "平局";
+    return esc(zh(p.pick === "H" ? m.home : m.away)) + "胜";
+  }
+
   function sideHTML(code, slot, away) {
     if (code) return `<span class="m-side${away ? " away" : ""}">${away ? `<span class="n">${esc(zh(code))}</span><span class="flag">${FLAG[code] || ""}</span>` : `<span class="flag">${FLAG[code] || ""}</span><span class="n">${esc(zh(code))}</span>`}</span>`;
     return `<span class="m-side${away ? " away" : ""}"><span class="tbd">${esc(slotLabel(slot))}</span></span>`;
@@ -752,7 +758,7 @@
         predHTML = `<div class="m-pred">
           <div class="pred-line"><span>主胜 ${pct(m.pred.p_home, 0)}</span><span>平 ${pct(m.pred.p_draw, 0)}</span><span>客胜 ${pct(m.pred.p_away, 0)}</span></div>
           <div class="obar"><i class="h" style="width:${m.pred.p_home * 100}%"></i><i class="d" style="width:${m.pred.p_draw * 100}%"></i><i class="a" style="width:${m.pred.p_away * 100}%"></i></div>
-          <div class="pred-line"><span>最可能 ${m.pred.pred_score.join("-")}</span><span>#${m.match}</span></div>${adv}</div>`;
+          <div class="pred-line"><span>看好 ${pickLabel(m, p)} ${p.pred_score.join("-")}</span><span>#${m.match}</span></div>${adv}</div>`;
       } else {
         predHTML = `<div class="m-pred">对阵确定后给出预测 · #${m.match}</div>`;
       }
@@ -800,7 +806,7 @@
     if (m.score) {
       const o = m.score[0] > m.score[1] ? esc(hn) + " 胜" : m.score[0] < m.score[1] ? esc(an) + " 胜" : "战平";
       right += `<div class="md-compare">
-        赛前预测：最可能 <b>${p.pred_score.join("-")}</b>（${esc(hn)}胜 ${pct(p.p_home)} / 平 ${pct(p.p_draw)} / ${esc(an)}胜 ${pct(p.p_away)}）<br>
+        赛前预测：看好 <b>${pickLabel(m, p)}</b>，首选比分 <b>${p.pred_score.join("-")}</b>（${esc(hn)}胜 ${pct(p.p_home)} / 平 ${pct(p.p_draw)} / ${esc(an)}胜 ${pct(p.p_away)}）<br>
         实际结果：<b>${m.score.join("-")}</b> ${o}${m.winner && m.score[0] === m.score[1] ? "（点球 " + esc(zh(m.winner)) + " 晋级）" : ""} · 赛前 AI 给这个比分的概率是 <b>${pct(p.p_actual_score)}</b><br>
         <span class="${m.outcome_hit ? "ok" : "miss"}">${m.outcome_hit ? "✓ 胜负预测命中" : "✗ 胜负预测未中"}</span>
         <span class="${m.score_hit ? "ok" : "miss"}">${m.score_hit ? "★ 比分完全命中" : "比分未完全命中"}</span></div>`;
@@ -942,7 +948,7 @@
       [s.brier.toFixed(3), "误差指数 · 越低越好"]
     ].map(([v, l]) => `<div class="stile"><div class="sv">${v}</div><div class="sl">${l}</div></div>`).join("");
     listEl.innerHTML = D.record.list.map(r => {
-      const m = { ...r, pred: { p_home: r.p_home, p_draw: r.p_draw, p_away: r.p_away, pred_score: r.pred_score },
+      const m = { ...r, pred: { p_home: r.p_home, p_draw: r.p_draw, p_away: r.p_away, pred_score: r.pred_score, pick: r.pick },
                   slot_home: null, slot_away: null, venue: "", group: null, round: "" };
       return matchCard(m);
     }).join("");

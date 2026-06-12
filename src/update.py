@@ -159,6 +159,7 @@ def build_schedule(state: dict) -> list[dict]:
         if rec:  # 已赛：用赛前预测（含市场盘口时即融合版）
             row["pred"] = {"p_home": rec["p_home"], "p_draw": rec["p_draw"],
                            "p_away": rec["p_away"],
+                           "pick": rec["pick"],
                            "pred_score": rec["pred_score"],
                            "top_scores": rec["top_scores"],
                            "grid": rec["grid"],
@@ -176,7 +177,8 @@ def build_schedule(state: dict) -> list[dict]:
                 "p_home": round(pred["p_win"], 4),
                 "p_draw": round(pred["p_draw"], 4),
                 "p_away": round(pred["p_loss"], 4),
-                "pred_score": list(pred["top_scores"][0][0]),
+                "pick": pred["outcome_pick"],
+                "pred_score": list(pred["outcome_score"][0]),
                 "top_scores": [{"score": list(s), "p": round(p, 4)}
                                for s, p in pred["top_scores"][:5]],
                 "grid": score_grid(home, away, we_override=we_o),

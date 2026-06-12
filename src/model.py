@@ -203,12 +203,25 @@ def match_probabilities(team_a: dict, team_b: dict, knockout: bool = False,
         else:
             p_loss += p
 
+    # 比分首选与胜负判断保持一致：先定看好的结果，再在该结果内取最可能比分
+    # （否则均势局会出现"看好主胜、比分却报 1-1"的矛盾——联合众数≠边际众数）
+    outcome = ("H" if p_win >= max(p_draw, p_loss)
+               else "D" if p_draw >= p_loss else "A")
+    pick_score, pick_p = None, -1.0
+    for (ga, gb), p in zip(scores, probs):
+        ok = (ga > gb if outcome == "H"
+              else ga == gb if outcome == "D" else ga < gb)
+        if ok and p > pick_p:
+            pick_score, pick_p = (ga, gb), p
+
     lam_a, lam_b = expected_goals(we)
     result = {
         "win_expectancy": we,
         "lambdas": (lam_a * st, lam_b * st),
         "p_win": p_win, "p_draw": p_draw, "p_loss": p_loss,
         "top_scores": top_scores,
+        "outcome_pick": outcome,
+        "outcome_score": (pick_score, pick_p),
     }
     if knockout:
         # 平局部分按加时/点球的近似胜率劈给双方
