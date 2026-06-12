@@ -55,6 +55,8 @@
   "indexnow": {
     "key": "48b33a9e669b77036cc7b79121580732",
     "key_location": "https://cup2026predictor.com/48b33a9e669b77036cc7b79121580732.txt",
-    "status": "key_file_created_pending_deploy"
+    "status": "submitted",
+    "http_status": "202",
+    "submitted_url_count": 16
   }
 }
