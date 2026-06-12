@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cup2026predictor.com/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://cup2026predictor.com/predictor/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/simulator/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/bracket-predictor/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/winner-predictions/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/groups/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/argentina/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/spain/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/brazil/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/england/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/usa/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/mexico/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/france/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/germany/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/portugal/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://cup2026predictor.com/teams/netherlands/</loc><lastmod>2026-06-12</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://worldcup.lightai.io/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
