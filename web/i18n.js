@@ -240,15 +240,47 @@
     const isEn = lang === 'en';
     setHeadMeta();
     const btn = document.getElementById('lang-toggle');
+    const menu = document.getElementById('lang-menu');
+    const options = document.querySelectorAll('.lang-option[data-lang]');
     if (btn) {
       if (btn.tagName === 'SELECT') {
         btn.value = lang;
         btn.onchange = () => { localStorage.setItem(LANG_KEY, btn.value); location.href = HREFS[btn.value] + location.hash; };
       } else {
         btn.textContent = LANG_META[lang].label;
-        btn.onclick = () => { location.href = '/zh/' + location.hash; };
+        btn.setAttribute('aria-label', 'Switch language');
+        btn.setAttribute('aria-expanded', menu && menu.classList.contains('open') ? 'true' : 'false');
+        if (!btn.dataset.bound) {
+          const closeMenu = () => {
+            if (!menu) return;
+            menu.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+          };
+          const toggleMenu = () => {
+            if (!menu) return;
+            const open = !menu.classList.contains('open');
+            menu.classList.toggle('open', open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          };
+          btn.addEventListener('click', e => { e.stopPropagation(); toggleMenu(); });
+          document.addEventListener('click', e => { if (menu && !menu.contains(e.target)) closeMenu(); });
+          document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+          btn.dataset.bound = '1';
+        }
       }
-      btn.setAttribute('aria-label', 'Switch language');
+      options.forEach(opt => {
+        const code = opt.dataset.lang;
+        opt.classList.toggle('active', code === lang);
+        opt.setAttribute('aria-selected', code === lang ? 'true' : 'false');
+        if (!opt.dataset.bound) {
+          opt.addEventListener('click', e => {
+            e.stopPropagation();
+            localStorage.setItem(LANG_KEY, code);
+            location.href = HREFS[code] + location.hash;
+          });
+          opt.dataset.bound = '1';
+        }
+      });
     }
     if (isEn) {
       const chips = document.querySelectorAll('#meta-chips .chip');
