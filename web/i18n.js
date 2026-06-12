@@ -1,6 +1,9 @@
 (function () {
   const LANG_KEY = 'cup2026predictor.lang';
-  const lang = localStorage.getItem(LANG_KEY) || 'en';
+  const SUPPORTED = ['en', 'de', 'es', 'pt', 'ru', 'zh'];
+  const PATH_LANG = (location.pathname.match(/^\/(de|es|pt|ru|zh)(?:\/|$)/) || [])[1];
+  const lang = SUPPORTED.includes(PATH_LANG) ? PATH_LANG : 'en';
+  localStorage.setItem(LANG_KEY, lang);
   const D = window.WC_DATA || { teams: [] };
   const teamNameMap = {};
   (D.teams || []).forEach(t => {
@@ -138,6 +141,7 @@
   });
 
   const zhExact = {
+    "Daily Update · Live": "每日更新 · 实时",
     "AI World Cup Predictions 2026": "AI 世界杯预测 2026",
     "AI World Cup Predictions": "AI 世界杯预测",
     "Who will lift the trophy? This site lets the model play the 2026 World Cup millions of times, then recalculates the title race, match forecasts, groups, and prediction record after every update.": "谁能捧起大力神杯？我们让 AI 把这届世界杯提前\"踢\"了上亿遍。每天根据最新战况重新计算，整个赛事期间持续更新。",
@@ -145,12 +149,66 @@
     "Show all 48 teams ↓": "显示全部 48 队 ↓",
   };
 
+
+  const LANG_META = {
+    en: { html: 'en', og: 'en_US', label: 'English', path: '/', title: 'AI World Cup Predictions 2026 | Live Champion Odds, Scores & Daily Reports', desc: 'AI-powered 2026 World Cup predictions with live champion probabilities, match score forecasts, group qualification outlooks, daily reports, and prediction record tracking.' },
+    de: { html: 'de', og: 'de_DE', label: 'Deutsch', path: '/de/', title: 'KI-WM-Prognosen 2026 | Live Titelchancen, Ergebnisse & tägliche Berichte', desc: 'KI-gestützte Prognosen zur WM 2026 mit Live-Titelwahrscheinlichkeiten, Ergebnisvorhersagen, Gruppenaussichten, täglichen Berichten und Prognosebilanz.' },
+    es: { html: 'es', og: 'es_ES', label: 'Español', path: '/es/', title: 'Predicciones IA Mundial 2026 | Probabilidades, marcadores e informes diarios', desc: 'Predicciones con IA para el Mundial 2026: probabilidades de campeón en vivo, pronósticos de marcadores, clasificación de grupos, informes diarios y seguimiento de aciertos.' },
+    pt: { html: 'pt', og: 'pt_BR', label: 'Português', path: '/pt/', title: 'Previsões IA Copa do Mundo 2026 | Chances, placares e relatórios diários', desc: 'Previsões com IA para a Copa do Mundo 2026 com probabilidades ao vivo de campeão, placares previstos, grupos, relatórios diários e histórico de acertos.' },
+    ru: { html: 'ru', og: 'ru_RU', label: 'Русский', path: '/ru/', title: 'ИИ-прогнозы ЧМ-2026 | Шансы на титул, счета и ежедневные отчеты', desc: 'ИИ-прогнозы чемпионата мира 2026: текущие шансы на титул, прогнозы счетов, расклады в группах, ежедневные отчеты и учет точности.' },
+    zh: { html: 'zh-CN', og: 'zh_CN', label: '中文', path: '/zh/', title: 'AI 世界杯预测 2026 ｜ 实时夺冠概率 · 比分预测 · 每日 AI 战报', desc: 'AI 世界杯预测 2026：实时夺冠概率、逐场比分预测、小组出线形势、每日 AI 战报与预测战绩追踪。' }
+  };
+  const HREFS = { en: '/', de: '/de/', es: '/es/', pt: '/pt/', ru: '/ru/', zh: '/zh/' };
+  const localeText = {
+    de: {'Daily Update · Live':'Tägliches Update · Live','AI World Cup Predictions 2026':'KI-WM-Prognosen 2026','AI World Cup Predictions':'KI-WM-Prognosen','Who will lift the trophy? This site lets the model play the 2026 World Cup millions of times, then recalculates the title race, match forecasts, groups, and prediction record after every update.':'Wer holt den Pokal? Dieses Tool lässt das Modell die WM 2026 millionenfach simulieren und berechnet nach jedem Update Titelrennen, Spielprognosen, Gruppen und Prognosebilanz neu.','Champion Probability Board':'Titelwahrscheinlichkeiten','Show all 48 teams ↓':'Alle 48 Teams anzeigen ↓','Collapse ↑':'Einklappen ↑','Champion Probability Trend':'Trend der Titelchancen','Snapshots after each update':'Snapshots nach jedem Update','Most Likely Final Matchups':'Wahrscheinlichste Finalduelle','Schedule · Scores · Predictions':'Spielplan · Ergebnisse · Prognosen','Groups':'Gruppen','Group Outlook':'Gruppenaussichten','Points are actual · probabilities are simulated':'Punkte real · Wahrscheinlichkeiten simuliert','AI Reports':'KI-Berichte','AI Report':'KI-Bericht','Updated with match windows · full archive':'Aktualisiert nach Spielphasen · Archiv','Record':'Bilanz','Prediction Record':'Prognosebilanz','All predictions are generated before kickoff':'Alle Prognosen entstehen vor Anpfiff','Save share image':'Share-Bild speichern','Overview':'Übersicht','Schedule · Predictions':'Spielplan · Prognosen','Played':'Gespielt','matches':'Spiele','Simulations':'Simulationen','millions':'Millionen','times':'Mal','Updated':'Aktualisiert','Market odds':'Marktquoten','blended':'integriert','Outcome accuracy':'Trefferquote Ergebnis','Predictions are for entertainment only ⚽':'Prognosen nur zur Unterhaltung ⚽','Favorite':'Favorit','Second favorite':'Zweiter Favorit','Third favorite':'Dritter Favorit','Champion chance · ELO':'Titelchance · ELO','Host':'Gastgeber','Round of 32':'Runde der 32','Round of 16':'Achtelfinale','Quarter-final':'Viertelfinale','Semi-final':'Halbfinale','Final':'Finale','Final & third-place':'Finale & Spiel um Platz 3','Champion':'Champion','No history snapshots yet':'Noch keine Verlaufssnapshots','All':'Alle','Group stage':'Gruppenphase','Upcoming':'Ausstehend','Today':'Heute','Filter by team':'Nach Team filtern','Select team':'Team wählen','All teams':'Alle Teams','No matches match these filters':'Keine Spiele für diese Filter','TBD':'Offen','Draw':'Unentschieden','win':'Sieg','Home':'Heim','Away':'Auswärts','Pick':'Tipp','Score probability grid':'Score-Wahrscheinlichkeiten','AI take':'KI-Einschätzung','Top 5 likely scores':'Top 5 wahrscheinlichste Ergebnisse','Betting market':'Wettmarkt','Pre-match prediction':'Vorab-Prognose','Preferred score':'Bevorzugtes Ergebnis','Actual result':'Endergebnis','Exact score hit':'Exakter Score getroffen','Exact score missed':'Exakter Score verfehlt','Predicted matches':'Prognostizierte Spiele','Exact-score accuracy':'Exakte Scorequote','Error index · lower is better':'Fehlerindex · niedriger ist besser','Archive →':'Archiv →','FABLE comment':'FABLE-Kommentar','Share image':'Bild teilen','Long-press to save, or share directly':'Zum Speichern lange drücken oder direkt teilen','Scan for live predictions · entertainment only':'Scannen für Live-Prognosen · nur Unterhaltung','matches played':'gespielte Spiele'},
+    es: {'Daily Update · Live':'Actualización diaria · En vivo','AI World Cup Predictions 2026':'Predicciones IA Mundial 2026','AI World Cup Predictions':'Predicciones IA Mundial','Who will lift the trophy? This site lets the model play the 2026 World Cup millions of times, then recalculates the title race, match forecasts, groups, and prediction record after every update.':'¿Quién levantará la copa? Este sitio hace que el modelo simule el Mundial 2026 millones de veces y recalcula la carrera por el título, los pronósticos, los grupos y el historial tras cada actualización.','Champion Probability Board':'Probabilidades de campeón','Show all 48 teams ↓':'Mostrar los 48 equipos ↓','Collapse ↑':'Contraer ↑','Champion Probability Trend':'Tendencia de campeón','Snapshots after each update':'Capturas tras cada actualización','Most Likely Final Matchups':'Finales más probables','Schedule · Scores · Predictions':'Calendario · Marcadores · Predicciones','Groups':'Grupos','Group Outlook':'Panorama de grupos','Points are actual · probabilities are simulated':'Puntos reales · probabilidades simuladas','AI Reports':'Informes IA','AI Report':'Informe IA','Updated with match windows · full archive':'Actualizado por ventanas de partidos · archivo','Record':'Historial','Prediction Record':'Historial de predicciones','All predictions are generated before kickoff':'Todas las predicciones se generan antes del inicio','Save share image':'Guardar imagen para compartir','Overview':'Resumen','Schedule · Predictions':'Calendario · Predicciones','Played':'Jugados','matches':'partidos','Simulations':'Simulaciones','millions':'millones','times':'veces','Updated':'Actualizado','Market odds':'Cuotas de mercado','blended':'integradas','Outcome accuracy':'Acierto de resultado','Predictions are for entertainment only ⚽':'Predicciones solo para entretenimiento ⚽','Favorite':'Favorito','Second favorite':'Segundo favorito','Third favorite':'Tercer favorito','Champion chance · ELO':'Prob. campeón · ELO','Host':'Anfitrión','Round of 32':'Dieciseisavos','Round of 16':'Octavos','Quarter-final':'Cuartos','Semi-final':'Semifinal','Final':'Final','Final & third-place':'Final y tercer puesto','Champion':'Campeón','No history snapshots yet':'Aún no hay histórico','All':'Todos','Group stage':'Fase de grupos','Upcoming':'Pendientes','Today':'Hoy','Filter by team':'Filtrar por equipo','Select team':'Elegir equipo','All teams':'Todos los equipos','No matches match these filters':'No hay partidos con esos filtros','TBD':'Por definir','Draw':'Empate','win':'victoria','Home':'Local','Away':'Visitante','Pick':'Pronóstico','Score probability grid':'Tabla de probabilidad de marcador','AI take':'Lectura IA','Top 5 likely scores':'Top 5 marcadores probables','Betting market':'Mercado de apuestas','Pre-match prediction':'Predicción previa','Preferred score':'Marcador preferido','Actual result':'Resultado real','Exact score hit':'Marcador exacto acertado','Exact score missed':'Marcador exacto fallado','Predicted matches':'Partidos pronosticados','Exact-score accuracy':'Acierto de marcador exacto','Error index · lower is better':'Índice de error · menor es mejor','Archive →':'Archivo →','FABLE comment':'Comentario FABLE','Share image':'Compartir imagen','Long-press to save, or share directly':'Mantén pulsado para guardar o comparte directamente','Scan for live predictions · entertainment only':'Escanea para predicciones en vivo · solo entretenimiento','matches played':'partidos jugados'},
+    pt: {'Daily Update · Live':'Atualização diária · Ao vivo','AI World Cup Predictions 2026':'Previsões IA Copa 2026','AI World Cup Predictions':'Previsões IA Copa','Who will lift the trophy? This site lets the model play the 2026 World Cup millions of times, then recalculates the title race, match forecasts, groups, and prediction record after every update.':'Quem levantará a taça? Este site faz o modelo simular a Copa do Mundo de 2026 milhões de vezes e recalcula a disputa pelo título, os palpites, os grupos e o histórico após cada atualização.','Champion Probability Board':'Probabilidades de campeão','Show all 48 teams ↓':'Mostrar as 48 seleções ↓','Collapse ↑':'Recolher ↑','Champion Probability Trend':'Tendência de campeão','Snapshots after each update':'Snapshots após cada atualização','Most Likely Final Matchups':'Finais mais prováveis','Schedule · Scores · Predictions':'Calendário · Placar · Previsões','Groups':'Grupos','Group Outlook':'Panorama dos grupos','Points are actual · probabilities are simulated':'Pontos reais · probabilidades simuladas','AI Reports':'Relatórios IA','AI Report':'Relatório IA','Updated with match windows · full archive':'Atualizado por janelas de jogos · arquivo','Record':'Histórico','Prediction Record':'Histórico de previsões','All predictions are generated before kickoff':'Todas as previsões são geradas antes do início','Save share image':'Salvar imagem para compartilhar','Overview':'Visão geral','Schedule · Predictions':'Calendário · Previsões','Played':'Jogados','matches':'jogos','Simulations':'Simulações','millions':'milhões','times':'vezes','Updated':'Atualizado','Market odds':'Odds do mercado','blended':'integradas','Outcome accuracy':'Acerto de resultado','Predictions are for entertainment only ⚽':'Previsões apenas para entretenimento ⚽','Favorite':'Favorito','Second favorite':'Segundo favorito','Third favorite':'Terceiro favorito','Champion chance · ELO':'Chance de título · ELO','Host':'Anfitrião','Round of 32':'Fase de 32','Round of 16':'Oitavas','Quarter-final':'Quartas','Semi-final':'Semifinal','Final':'Final','Final & third-place':'Final e terceiro lugar','Champion':'Campeão','No history snapshots yet':'Ainda sem histórico','All':'Todos','Group stage':'Fase de grupos','Upcoming':'A disputar','Today':'Hoje','Filter by team':'Filtrar por seleção','Select team':'Escolher seleção','All teams':'Todas as seleções','No matches match these filters':'Nenhum jogo com esses filtros','TBD':'A definir','Draw':'Empate','win':'vitória','Home':'Casa','Away':'Fora','Pick':'Palpite','Score probability grid':'Grade de probabilidade de placar','AI take':'Leitura da IA','Top 5 likely scores':'Top 5 placares prováveis','Betting market':'Mercado de apostas','Pre-match prediction':'Previsão pré-jogo','Preferred score':'Placar preferido','Actual result':'Resultado real','Exact score hit':'Placar exato acertado','Exact score missed':'Placar exato não acertado','Predicted matches':'Jogos previstos','Exact-score accuracy':'Acerto de placar exato','Error index · lower is better':'Índice de erro · menor é melhor','Archive →':'Arquivo →','FABLE comment':'Comentário FABLE','Share image':'Compartilhar imagem','Long-press to save, or share directly':'Pressione para salvar ou compartilhar','Scan for live predictions · entertainment only':'Escaneie para previsões ao vivo · entretenimento','matches played':'jogos disputados'},
+    ru: {'Daily Update · Live':'Ежедневное обновление · Live','AI World Cup Predictions 2026':'ИИ-прогнозы ЧМ-2026','AI World Cup Predictions':'ИИ-прогнозы ЧМ','Who will lift the trophy? This site lets the model play the 2026 World Cup millions of times, then recalculates the title race, match forecasts, groups, and prediction record after every update.':'Кто поднимет кубок? Сайт миллионы раз симулирует ЧМ-2026 и после каждого обновления пересчитывает гонку за титул, прогнозы матчей, группы и точность модели.','Champion Probability Board':'Вероятности чемпионства','Show all 48 teams ↓':'Показать все 48 команд ↓','Collapse ↑':'Свернуть ↑','Champion Probability Trend':'Динамика шансов на титул','Snapshots after each update':'Снимки после каждого обновления','Most Likely Final Matchups':'Наиболее вероятные финалы','Schedule · Scores · Predictions':'Расписание · Счета · Прогнозы','Groups':'Группы','Group Outlook':'Расклады в группах','Points are actual · probabilities are simulated':'Очки реальные · вероятности смоделированы','AI Reports':'ИИ-отчеты','AI Report':'ИИ-отчет','Updated with match windows · full archive':'Обновляется по игровым окнам · архив','Record':'Статистика','Prediction Record':'Точность прогнозов','All predictions are generated before kickoff':'Все прогнозы сформированы до стартового свистка','Save share image':'Сохранить изображение','Overview':'Обзор','Schedule · Predictions':'Расписание · Прогнозы','Played':'Сыграно','matches':'матчей','Simulations':'Симуляции','millions':'миллионы','times':'раз','Updated':'Обновлено','Market odds':'Рыночные коэффициенты','blended':'учтены','Outcome accuracy':'Точность исходов','Predictions are for entertainment only ⚽':'Прогнозы только для развлечения ⚽','Favorite':'Фаворит','Second favorite':'Второй фаворит','Third favorite':'Третий фаворит','Champion chance · ELO':'Шанс титула · ELO','Host':'Хозяин','Round of 32':'1/16 финала','Round of 16':'1/8 финала','Quarter-final':'Четвертьфинал','Semi-final':'Полуфинал','Final':'Финал','Final & third-place':'Финал и матч за 3-е место','Champion':'Чемпион','No history snapshots yet':'История пока пуста','All':'Все','Group stage':'Групповой этап','Upcoming':'Предстоящие','Today':'Сегодня','Filter by team':'Фильтр по команде','Select team':'Выбрать команду','All teams':'Все команды','No matches match these filters':'Нет матчей по этим фильтрам','TBD':'Будет определено','Draw':'Ничья','win':'победа','Home':'Хозяева','Away':'Гости','Pick':'Выбор','Score probability grid':'Вероятности счетов','AI take':'Оценка ИИ','Top 5 likely scores':'Топ-5 вероятных счетов','Betting market':'Рынок ставок','Pre-match prediction':'Прогноз до матча','Preferred score':'Предпочтительный счет','Actual result':'Фактический результат','Exact score hit':'Точный счет угадан','Exact score missed':'Точный счет не угадан','Predicted matches':'Матчи с прогнозом','Exact-score accuracy':'Точность счета','Error index · lower is better':'Индекс ошибки · меньше лучше','Archive →':'Архив →','FABLE comment':'Комментарий FABLE','Share image':'Поделиться изображением','Long-press to save, or share directly':'Удерживайте, чтобы сохранить или поделиться','Scan for live predictions · entertainment only':'Сканируйте для live-прогнозов · развлечение','matches played':'сыграно матчей'}
+  };
+  function buildLocaleMap(code) {
+    if (code === 'en') return enExact;
+    if (code === 'zh') return zhExact;
+    const target = localeText[code] || {};
+    const out = {};
+    Object.entries(enExact).forEach(([zhText, enText]) => { out[zhText] = target[enText] || enText; });
+    Object.entries(target).forEach(([enText, locText]) => { out[enText] = locText; });
+    return out;
+  }
+  function setHeadMeta() {
+    const meta = LANG_META[lang] || LANG_META.en;
+    const abs = 'https://cup2026predictor.com' + meta.path;
+    document.documentElement.lang = meta.html;
+    document.title = meta.title;
+    const set = (sel, val, attr='content') => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
+    set('meta[name="description"]', meta.desc);
+    set('meta[property="og:title"]', meta.title);
+    set('meta[property="og:description"]', meta.desc);
+    set('meta[property="og:url"]', abs);
+    set('meta[property="og:locale"]', meta.og);
+    set('meta[name="twitter:title"]', meta.title);
+    set('meta[name="twitter:description"]', meta.desc);
+    set('link[rel="canonical"]', abs, 'href');
+    Object.entries({en:'en',de:'de',es:'es',pt:'pt',ru:'ru',zh:'zh-CN'}).forEach(([code,hreflang]) => {
+      let el = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+      if (!el) { el = document.createElement('link'); el.rel = 'alternate'; el.hreflang = hreflang; document.head.appendChild(el); }
+      el.href = 'https://cup2026predictor.com' + HREFS[code];
+    });
+    let xd = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    if (!xd) { xd = document.createElement('link'); xd.rel = 'alternate'; xd.hreflang = 'x-default'; document.head.appendChild(xd); }
+    xd.href = 'https://cup2026predictor.com/';
+  }
+
   function replaceAllText(text, map) {
     let out = text;
     Object.entries(map).sort((a, b) => b[0].length - a[0].length).forEach(([from, to]) => {
-      out = out.split(from).join(to);
+      if (lang !== 'en' && lang !== 'zh' && /^[A-Za-z][A-Za-z\s·-]{0,12}$/.test(from)) {
+        const escFrom = from.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        out = out.replace(new RegExp(`(?<![A-Za-z])${escFrom}(?![A-Za-z])`, 'g'), to);
+      } else {
+        out = out.split(from).join(to);
+      }
     });
-    if (lang === 'en') {
+    if (lang !== 'zh') {
       Object.entries(teamNameMap).sort((a, b) => b[0].length - a[0].length).forEach(([zh, en]) => {
         out = out.split(zh).join(en);
       });
@@ -165,7 +223,7 @@
         .replace(/Group ([A-L])第一/g, 'Group $1 winner')
         .replace(/Group ([A-L])第二/g, 'Group $1 runner-up')
         .replace(/小Group第三\(([^)]*)\)/g, 'Best third ($1)')
-        .replace(/(\d{1,2})月(\d{1,2})日星期([一二三四五六日天])/g, (_, m, d, w) => {
+        .replace(/(\d{1,2})月(\d{1,2})日(?:星期|周)([一二三四五六日天])/g, (_, m, d, w) => {
           const wd = {一:'Monday',二:'Tuesday',三:'Wednesday',四:'Thursday',五:'Friday',六:'Saturday',日:'Sunday',天:'Sunday'}[w] || '';
           const month = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m)] || m;
           return `${wd}, ${month} ${Number(d)}`;
@@ -180,18 +238,17 @@
 
   function applyLang() {
     const isEn = lang === 'en';
-    document.documentElement.lang = isEn ? 'en' : 'zh-CN';
-    document.title = isEn
-      ? 'AI World Cup Predictions 2026 | Live Champion Odds, Scores & Daily Reports'
-      : 'AI 世界杯预测 2026 ｜ 实时夺冠概率 · 比分预测 · 每日 AI 战报';
+    setHeadMeta();
     const btn = document.getElementById('lang-toggle');
     if (btn) {
-      btn.textContent = isEn ? '中文' : 'English';
-      btn.setAttribute('aria-label', isEn ? 'Switch to Chinese' : '切换到英文');
-      btn.onclick = () => {
-        localStorage.setItem(LANG_KEY, isEn ? 'zh' : 'en');
-        location.reload();
-      };
+      if (btn.tagName === 'SELECT') {
+        btn.value = lang;
+        btn.onchange = () => { localStorage.setItem(LANG_KEY, btn.value); location.href = HREFS[btn.value] + location.hash; };
+      } else {
+        btn.textContent = LANG_META[lang].label;
+        btn.onclick = () => { location.href = '/zh/' + location.hash; };
+      }
+      btn.setAttribute('aria-label', 'Switch language');
     }
     if (isEn) {
       const chips = document.querySelectorAll('#meta-chips .chip');
@@ -200,7 +257,7 @@
         if (chips[1].innerHTML !== simsHtml) chips[1].innerHTML = simsHtml;
       }
     }
-    const map = isEn ? enExact : zhExact;
+    const map = buildLocaleMap(lang);
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const p = node.parentElement;
@@ -223,7 +280,7 @@
 
   let scheduled = false;
   function scheduleApply() {
-    if (scheduled || lang !== 'en') return;
+    if (scheduled) return;
     scheduled = true;
     setTimeout(() => { scheduled = false; applyLang(); }, 0);
   }
