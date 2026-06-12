@@ -117,6 +117,8 @@ def build_state() -> dict:
                                 OPEN_MIN), OPEN_MAX)
 
     # ---- 市场赔率融合：为未赛对阵生成/刷新锁定预测 ----
+    from datetime import datetime, timezone
+    now_utc = datetime.now(timezone.utc)
     odds_cache = odds.load() or {}
     h2h = odds_cache.get("h2h", {})
     we_overrides = {}
@@ -124,6 +126,14 @@ def build_state() -> dict:
     for m in matches:
         if not (m["home"] and m["away"]) or m["score"]:
             continue  # 对阵未定或已赛（已赛的锁档不再改动）
+        kickoff = datetime.fromisoformat(
+            m["date_utc"].replace(" ", "T")).astimezone(timezone.utc)
+        if kickoff <= now_utc:
+            # 已开球但比分未入库：滚球/赛后盘口严禁覆盖赛前锁档
+            lk = locked.get(str(m["match"]))
+            if lk:
+                we_overrides[(m["home"], m["away"])] = lk["we"]
+            continue
         mkt = h2h.get(f"{m['home']}|{m['away']}")
         if mkt:
             home, away = by_code[m["home"]], by_code[m["away"]]
