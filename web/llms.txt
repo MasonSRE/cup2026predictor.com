@@ -1,0 +1,30 @@
+# Cup 2026 Predictor
+
+Cup 2026 Predictor is an English World Cup 2026 prediction and simulator site.
+
+Canonical URL: https://cup2026predictor.com/
+Sitemap: https://cup2026predictor.com/sitemap.xml
+Robots: https://cup2026predictor.com/robots.txt
+
+## Key pages
+
+- https://cup2026predictor.com/ — 2026 World Cup predictions and live AI simulator overview.
+- https://cup2026predictor.com/predictor/ — World Cup Predictor 2026 landing page.
+- https://cup2026predictor.com/simulator/ — World Cup 2026 tournament simulator page.
+- https://cup2026predictor.com/bracket-predictor/ — projected World Cup 2026 bracket predictor.
+- https://cup2026predictor.com/winner-predictions/ — World Cup 2026 winner predictions and champion chances.
+- https://cup2026predictor.com/groups/ — World Cup 2026 group-stage prediction page.
+- https://cup2026predictor.com/teams/spain/ — Spain World Cup 2026 prediction.
+- https://cup2026predictor.com/teams/argentina/ — Argentina World Cup 2026 prediction.
+- https://cup2026predictor.com/teams/brazil/ — Brazil World Cup 2026 prediction.
+- https://cup2026predictor.com/teams/england/ — England World Cup 2026 prediction.
+- https://cup2026predictor.com/teams/usa/ — United States World Cup 2026 prediction.
+- https://cup2026predictor.com/teams/mexico/ — Mexico World Cup 2026 prediction.
+
+## Data and model notes
+
+The site uses a local Python prediction engine based on dynamic Elo ratings, score distributions, host boosts, optional market signals, and Monte Carlo tournament simulations. Predictions are for information and entertainment only and are not betting advice.
+
+## Source attribution
+
+This project is a second-development fork of the open-source ai-worldcup-2026 project, with custom English SEO pages, branding, analytics, and deployment workflow for cup2026predictor.com.

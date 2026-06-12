@@ -40,6 +40,9 @@ for rel in required_pages:
     if not parser.canonical or not parser.canonical.startswith('https://cup2026predictor.com/'): errors.append(f'{rel}: bad canonical {parser.canonical}')
     if not parser.h1: errors.append(f'{rel}: missing h1')
     if 'worldcup.lightai.io' in s: errors.append(f'{rel}: old domain still present')
+    if 'pa-WK90PG-0AX8mkAS5xo1rK.js' not in s: errors.append(f'{rel}: missing Plausible script')
+    if rel == 'index.html' and ('github.com/MasonSRE/cup2026predictor.com' in s or '>Sitemap<' in s):
+        errors.append('index.html: footer should not expose GitHub/Sitemap links')
     if re.search(r'[\u4e00-\u9fff]', s): errors.append(f'{rel}: contains CJK characters')
 
 site=(WEB/'sitemap.xml').read_text()
@@ -48,7 +51,7 @@ for rel in required_pages:
     if url not in site: errors.append(f'sitemap missing {url}')
 robots=(WEB/'robots.txt').read_text()
 if 'https://cup2026predictor.com/sitemap.xml' not in robots: errors.append('robots sitemap wrong')
-for asset in ['og-image.png','favicon.png','apple-touch-icon.png','landing.css']:
+for asset in ['og-image.png','favicon.png','apple-touch-icon.png','landing.css','llms.txt']:
     if not (WEB/asset).exists(): errors.append(f'missing asset {asset}')
 
 if errors:
