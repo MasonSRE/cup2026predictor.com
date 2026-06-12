@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /data.js
+Disallow: /reports.js
+Disallow: /blurbs.js
+
+Sitemap: https://worldcup.lightai.io/sitemap.xml
