@@ -18,3 +18,4 @@ __pycache__/
 share/
 NOTES.md
 .claude/
+.wrangler/
