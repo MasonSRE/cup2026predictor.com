@@ -27,8 +27,11 @@
   "away": "CZE",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   1
+  ],
+  "winner": "KOR"
  },
  {
   "match": 3,
@@ -41,7 +44,10 @@
   "away": "BIH",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   1,
+   1
+  ],
   "winner": null
  },
  {
@@ -55,8 +61,11 @@
   "away": "PAR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   4,
+   1
+  ],
+  "winner": "USA"
  },
  {
   "match": 5,
