@@ -78,8 +78,11 @@
   "away": "SCO",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   1
+  ],
+  "winner": "SCO"
  },
  {
   "match": 6,
