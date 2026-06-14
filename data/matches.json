@@ -160,8 +160,11 @@
   "away": "CUW",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   7,
+   1
+  ],
+  "winner": "GER"
  },
  {
   "match": 11,
@@ -174,7 +177,10 @@
   "away": "JPN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   2,
+   2
+  ],
   "winner": null
  },
  {
