@@ -146,8 +146,11 @@
   "away": "ECU",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   0
+  ],
+  "winner": "CIV"
  },
  {
   "match": 10,
@@ -194,8 +197,11 @@
   "away": "TUN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   5,
+   1
+  ],
+  "winner": "SWE"
  },
  {
   "match": 13,
