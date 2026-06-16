@@ -248,7 +248,10 @@
   "away": "NZL",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   2,
+   2
+  ],
   "winner": null
  },
  {
