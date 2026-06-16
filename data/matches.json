@@ -214,7 +214,10 @@
   "away": "URU",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   1,
+   1
+  ],
   "winner": null
  },
  {
