@@ -480,7 +480,7 @@
   "round": 2,
   "stage": "group",
   "group": "C",
-  "date_utc": "2026-06-20 01:00:00Z",
+  "date_utc": "2026-06-20 00:30:00Z",
   "venue": "Philadelphia Stadium",
   "home": "BRA",
   "away": "HAI",
@@ -514,7 +514,7 @@
   "round": 2,
   "stage": "group",
   "group": "D",
-  "date_utc": "2026-06-20 04:00:00Z",
+  "date_utc": "2026-06-20 03:00:00Z",
   "venue": "San Francisco Bay Area Stadium",
   "home": "TUR",
   "away": "PAR",
@@ -582,8 +582,11 @@
   "away": "SWE",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   5,
+   1
+  ],
+  "winner": "NED"
  },
  {
   "match": 36,
