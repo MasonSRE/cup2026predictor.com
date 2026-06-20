@@ -486,8 +486,11 @@
   "away": "HAI",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   3,
+   0
+  ],
+  "winner": "BRA"
  },
  {
   "match": 30,
@@ -500,8 +503,11 @@
   "away": "MAR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   1
+  ],
+  "winner": "MAR"
  },
  {
   "match": 31,
@@ -514,8 +520,11 @@
   "away": "PAR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   1
+  ],
+  "winner": "PAR"
  },
  {
   "match": 32,
@@ -528,8 +537,11 @@
   "away": "AUS",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   0
+  ],
+  "winner": "USA"
  },
  {
   "match": 33,
@@ -1182,9 +1194,9 @@
   "group": null,
   "date_utc": "2026-07-01 01:00:00Z",
   "venue": "Mexico City Stadium",
-  "home": null,
+  "home": "MEX",
   "away": null,
-  "slot_home": "1A",
+  "slot_home": null,
   "slot_away": "3CEFHI",
   "score": null,
   "winner": null
@@ -1210,9 +1222,9 @@
   "group": null,
   "date_utc": "2026-07-02 00:00:00Z",
   "venue": "San Francisco Bay Area Stadium",
-  "home": null,
+  "home": "USA",
   "away": null,
-  "slot_home": "1D",
+  "slot_home": null,
   "slot_away": "3BEFIJ",
   "score": null,
   "winner": null
