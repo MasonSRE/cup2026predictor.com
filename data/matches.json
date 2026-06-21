@@ -636,8 +636,11 @@
   "away": "KSA",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   4,
+   0
+  ],
+  "winner": "ESP"
  },
  {
   "match": 39,
@@ -650,7 +653,10 @@
   "away": "IRN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   0,
+   0
+  ],
   "winner": null
  },
  {
