@@ -554,8 +554,11 @@
   "away": "CIV",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   1
+  ],
+  "winner": "GER"
  },
  {
   "match": 34,
@@ -568,7 +571,10 @@
   "away": "CUW",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   0,
+   0
+  ],
   "winner": null
  },
  {
@@ -599,8 +605,11 @@
   "away": "JPN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   4
+  ],
+  "winner": "JPN"
  },
  {
   "match": 37,
@@ -1127,9 +1136,9 @@
   "group": null,
   "date_utc": "2026-06-29 20:30:00Z",
   "venue": "Boston Stadium",
-  "home": null,
+  "home": "GER",
   "away": null,
-  "slot_home": "1E",
+  "slot_home": null,
   "slot_away": "3ABCDF",
   "score": null,
   "winner": null
