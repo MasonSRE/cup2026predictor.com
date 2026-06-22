@@ -718,8 +718,11 @@
   "away": "AUT",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   0
+  ],
+  "winner": "ARG"
  },
  {
   "match": 44,
