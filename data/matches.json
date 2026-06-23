@@ -690,8 +690,11 @@
   "away": "SEN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   3,
+   2
+  ],
+  "winner": "NOR"
  },
  {
   "match": 42,
@@ -704,8 +707,11 @@
   "away": "IRQ",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   3,
+   0
+  ],
+  "winner": "FRA"
  },
  {
   "match": 43,
@@ -735,8 +741,11 @@
   "away": "ALG",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   2
+  ],
+  "winner": "ALG"
  },
  {
   "match": 45,
