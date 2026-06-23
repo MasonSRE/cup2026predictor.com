@@ -786,8 +786,11 @@
   "away": "UZB",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   5,
+   0
+  ],
+  "winner": "POR"
  },
  {
   "match": 48,
@@ -1328,9 +1331,9 @@
   "group": null,
   "date_utc": "2026-07-03 22:00:00Z",
   "venue": "Miami Stadium",
-  "home": null,
+  "home": "ARG",
   "away": null,
-  "slot_home": "1J",
+  "slot_home": null,
   "slot_away": "2H",
   "score": null,
   "winner": null
