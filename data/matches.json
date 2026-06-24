@@ -758,7 +758,10 @@
   "away": "GHA",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   0,
+   0
+  ],
   "winner": null
  },
  {
@@ -772,8 +775,11 @@
   "away": "CRO",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   1
+  ],
+  "winner": "CRO"
  },
  {
   "match": 47,
@@ -803,8 +809,11 @@
   "away": "COD",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   0
+  ],
+  "winner": "COL"
  },
  {
   "match": 49,
