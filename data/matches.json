@@ -826,8 +826,11 @@
   "away": "BRA",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   3
+  ],
+  "winner": "BRA"
  },
  {
   "match": 50,
@@ -840,8 +843,11 @@
   "away": "HAI",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   4,
+   2
+  ],
+  "winner": "MAR"
  },
  {
   "match": 51,
@@ -854,8 +860,11 @@
   "away": "CAN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   1
+  ],
+  "winner": "SUI"
  },
  {
   "match": 52,
@@ -868,8 +877,11 @@
   "away": "QAT",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   3,
+   1
+  ],
+  "winner": "BIH"
  },
  {
   "match": 53,
@@ -882,8 +894,11 @@
   "away": "MEX",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   3
+  ],
+  "winner": "MEX"
  },
  {
   "match": 54,
@@ -896,8 +911,11 @@
   "away": "KOR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   0
+  ],
+  "winner": "RSA"
  },
  {
   "match": 55,
@@ -1158,10 +1176,10 @@
   "group": null,
   "date_utc": "2026-06-28 19:00:00Z",
   "venue": "Los Angeles Stadium",
-  "home": null,
-  "away": null,
-  "slot_home": "2A",
-  "slot_away": "2B",
+  "home": "RSA",
+  "away": "CAN",
+  "slot_home": null,
+  "slot_away": null,
   "score": null,
   "winner": null
  },
@@ -1187,9 +1205,9 @@
   "date_utc": "2026-06-30 01:00:00Z",
   "venue": "Monterrey Stadium",
   "home": null,
-  "away": null,
+  "away": "MAR",
   "slot_home": "1F",
-  "slot_away": "2C",
+  "slot_away": null,
   "score": null,
   "winner": null
  },
@@ -1200,9 +1218,9 @@
   "group": null,
   "date_utc": "2026-06-29 17:00:00Z",
   "venue": "Houston Stadium",
-  "home": null,
+  "home": "BRA",
   "away": null,
-  "slot_home": "1C",
+  "slot_home": null,
   "slot_away": "2F",
   "score": null,
   "winner": null
@@ -1326,9 +1344,9 @@
   "group": null,
   "date_utc": "2026-07-03 03:00:00Z",
   "venue": "BC Place Vancouver",
-  "home": null,
+  "home": "SUI",
   "away": null,
-  "slot_home": "1B",
+  "slot_home": null,
   "slot_away": "3EFGIJ",
   "score": null,
   "winner": null
