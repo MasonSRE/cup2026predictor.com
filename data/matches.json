@@ -1030,8 +1030,11 @@
   "away": "FRA",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   4
+  ],
+  "winner": "FRA"
  },
  {
   "match": 62,
@@ -1044,8 +1047,11 @@
   "away": "IRQ",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   5,
+   0
+  ],
+  "winner": "SEN"
  },
  {
   "match": 63,
@@ -1058,7 +1064,10 @@
   "away": "IRN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   1,
+   1
+  ],
   "winner": null
  },
  {
@@ -1072,8 +1081,11 @@
   "away": "BEL",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   5
+  ],
+  "winner": "BEL"
  },
  {
   "match": 65,
@@ -1086,7 +1098,10 @@
   "away": "KSA",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
+  "score": [
+   0,
+   0
+  ],
   "winner": null
  },
  {
@@ -1100,8 +1115,11 @@
   "away": "ESP",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   1
+  ],
+  "winner": "ESP"
  },
  {
   "match": 67,
@@ -1209,9 +1227,9 @@
   "date_utc": "2026-06-29 20:30:00Z",
   "venue": "Boston Stadium",
   "home": "GER",
-  "away": null,
+  "away": "PAR",
   "slot_home": null,
-  "slot_away": "3ABCDF",
+  "slot_away": null,
   "score": null,
   "winner": null
  },
@@ -1250,10 +1268,10 @@
   "group": null,
   "date_utc": "2026-06-30 21:00:00Z",
   "venue": "New York/New Jersey Stadium",
-  "home": null,
-  "away": null,
-  "slot_home": "1I",
-  "slot_away": "3CDFGH",
+  "home": "FRA",
+  "away": "SWE",
+  "slot_home": null,
+  "slot_away": null,
   "score": null,
   "winner": null
  },
@@ -1265,9 +1283,9 @@
   "date_utc": "2026-06-30 17:00:00Z",
   "venue": "Dallas Stadium",
   "home": "CIV",
-  "away": null,
+  "away": "NOR",
   "slot_home": null,
-  "slot_away": "2I",
+  "slot_away": null,
   "score": null,
   "winner": null
  },
@@ -1320,9 +1338,9 @@
   "group": null,
   "date_utc": "2026-07-01 20:00:00Z",
   "venue": "Seattle Stadium",
-  "home": null,
+  "home": "BEL",
   "away": null,
-  "slot_home": "1G",
+  "slot_home": null,
   "slot_away": "3AEHIJ",
   "score": null,
   "winner": null
@@ -1348,9 +1366,9 @@
   "group": null,
   "date_utc": "2026-07-02 19:00:00Z",
   "venue": "Los Angeles Stadium",
-  "home": null,
+  "home": "ESP",
   "away": null,
-  "slot_home": "1H",
+  "slot_home": null,
   "slot_away": "2J",
   "score": null,
   "winner": null
@@ -1377,9 +1395,9 @@
   "date_utc": "2026-07-03 22:00:00Z",
   "venue": "Miami Stadium",
   "home": "ARG",
-  "away": null,
+  "away": "CPV",
   "slot_home": null,
-  "slot_away": "2H",
+  "slot_away": null,
   "score": null,
   "winner": null
  },
@@ -1405,9 +1423,9 @@
   "date_utc": "2026-07-03 18:00:00Z",
   "venue": "Dallas Stadium",
   "home": "AUS",
-  "away": null,
+  "away": "EGY",
   "slot_home": null,
-  "slot_away": "2G",
+  "slot_away": null,
   "score": null,
   "winner": null
  },
