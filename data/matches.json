@@ -1234,8 +1234,11 @@
   "away": "CAN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   0,
+   1
+  ],
+  "winner": "CAN"
  },
  {
   "match": 74,
@@ -1468,7 +1471,7 @@
   "group": null,
   "date_utc": "2026-07-04 17:00:00Z",
   "venue": "Houston Stadium",
-  "home": null,
+  "home": "CAN",
   "away": null,
   "slot_home": null,
   "slot_away": null,
