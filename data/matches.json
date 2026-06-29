@@ -1279,8 +1279,11 @@
   "away": "JPN",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   1
+  ],
+  "winner": "BRA"
  },
  {
   "match": 77,
@@ -1485,7 +1488,7 @@
   "group": null,
   "date_utc": "2026-07-05 20:00:00Z",
   "venue": "New York/New Jersey Stadium",
-  "home": null,
+  "home": "BRA",
   "away": null,
   "slot_home": null,
   "slot_away": null,
