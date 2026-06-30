@@ -1251,8 +1251,11 @@
   "away": "PAR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   1
+  ],
+  "winner": "PAR"
  },
  {
   "match": 75,
@@ -1265,8 +1268,11 @@
   "away": "MAR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   1
+  ],
+  "winner": "MAR"
  },
  {
   "match": 76,
@@ -1460,7 +1466,7 @@
   "group": null,
   "date_utc": "2026-07-04 21:00:00Z",
   "venue": "Philadelphia Stadium",
-  "home": null,
+  "home": "PAR",
   "away": null,
   "slot_home": null,
   "slot_away": null,
@@ -1475,7 +1481,7 @@
   "date_utc": "2026-07-04 17:00:00Z",
   "venue": "Houston Stadium",
   "home": "CAN",
-  "away": null,
+  "away": "MAR",
   "slot_home": null,
   "slot_away": null,
   "score": null,
