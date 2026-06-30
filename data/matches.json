@@ -1316,8 +1316,11 @@
   "away": "NOR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   2
+  ],
+  "winner": "NOR"
  },
  {
   "match": 79,
@@ -1495,7 +1498,7 @@
   "date_utc": "2026-07-05 20:00:00Z",
   "venue": "New York/New Jersey Stadium",
   "home": "BRA",
-  "away": null,
+  "away": "NOR",
   "slot_home": null,
   "slot_away": null,
   "score": null,
