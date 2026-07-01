@@ -1330,7 +1330,7 @@
   "round": 4,
   "stage": "r32",
   "group": null,
-  "date_utc": "2026-07-01 01:00:00Z",
+  "date_utc": "2026-07-01 02:00:00Z",
   "venue": "Mexico City Stadium",
   "home": "MEX",
   "away": "ECU",
@@ -1353,8 +1353,11 @@
   "away": "COD",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   1
+  ],
+  "winner": "ENG"
  },
  {
   "match": 81,
@@ -1518,7 +1521,7 @@
   "date_utc": "2026-07-06 00:00:00Z",
   "venue": "Mexico City Stadium",
   "home": "MEX",
-  "away": null,
+  "away": "ENG",
   "slot_home": null,
   "slot_away": null,
   "score": null,
