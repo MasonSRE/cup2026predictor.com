@@ -1302,8 +1302,11 @@
   "away": "SWE",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   3,
+   0
+  ],
+  "winner": "FRA"
  },
  {
   "match": 78,
@@ -1333,8 +1336,11 @@
   "away": "ECU",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   2,
+   0
+  ],
+  "winner": "MEX"
  },
  {
   "match": 80,
@@ -1470,7 +1476,7 @@
   "date_utc": "2026-07-04 21:00:00Z",
   "venue": "Philadelphia Stadium",
   "home": "PAR",
-  "away": null,
+  "away": "FRA",
   "slot_home": null,
   "slot_away": null,
   "score": null,
@@ -1511,7 +1517,7 @@
   "group": null,
   "date_utc": "2026-07-06 00:00:00Z",
   "venue": "Mexico City Stadium",
-  "home": null,
+  "home": "MEX",
   "away": null,
   "slot_home": null,
   "slot_away": null,
