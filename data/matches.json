@@ -1540,8 +1540,11 @@
   "away": "NOR",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   2
+  ],
+  "winner": "NOR"
  },
  {
   "match": 92,
@@ -1648,7 +1651,7 @@
   "group": null,
   "date_utc": "2026-07-11 21:00:00Z",
   "venue": "Miami Stadium",
-  "home": null,
+  "home": "NOR",
   "away": null,
   "slot_home": null,
   "slot_away": null,
