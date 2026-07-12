@@ -1676,8 +1676,11 @@
   "away": "ENG",
   "slot_home": null,
   "slot_away": null,
-  "score": null,
-  "winner": null
+  "score": [
+   1,
+   2
+  ],
+  "winner": "ENG"
  },
  {
   "match": 100,
@@ -1714,7 +1717,7 @@
   "group": null,
   "date_utc": "2026-07-15 19:00:00Z",
   "venue": "Atlanta Stadium",
-  "home": null,
+  "home": "ENG",
   "away": null,
   "slot_home": null,
   "slot_away": null,
